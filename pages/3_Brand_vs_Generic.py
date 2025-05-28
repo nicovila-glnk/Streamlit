@@ -103,6 +103,29 @@ def plot_diff(df, dim):
     st.altair_chart(chart, use_container_width=True)
 
 if view == "Region":
+    # Add prescriber type filter
+    prescriber_types = ["All"] + sorted(presc["Prescriber"].unique())
+    selected_prescriber = st.selectbox("Filter by Prescriber Type", prescriber_types)
+    
+    # Filter data based on prescriber selection
+    if selected_prescriber != "All":
+        filtered_reg = reg.copy()
+        # Get the filtered data from prescriber data
+        filtered_presc = presc[presc["Prescriber"] == selected_prescriber]
+        # Filter region data based on the filtered prescriber data
+        filtered_reg = filtered_reg[filtered_reg["Region"].isin(filtered_presc["Region"].unique())]
+        # Recalculate totals and shares
+        filtered_reg["brand_total"] = filtered_reg["Region"].map(
+            filtered_presc.groupby("Region")["brand_total"].sum()
+        ).fillna(0)
+        filtered_reg["generic_total"] = filtered_reg["Region"].map(
+            filtered_presc.groupby("Region")["generic_total"].sum()
+        ).fillna(0)
+        filtered_reg["combined_total"] = filtered_reg["brand_total"] + filtered_reg["generic_total"]
+        filtered_reg["brand_share"] = filtered_reg["brand_total"] / filtered_reg["combined_total"]
+        filtered_reg["generic_share"] = filtered_reg["generic_total"] / filtered_reg["combined_total"]
+        reg = filtered_reg
+
     plot_volume(reg,    "Region")
     plot_share(reg,     "Region")
     plot_diff(reg,      "Region")
