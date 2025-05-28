@@ -1,0 +1,28 @@
+Key,Value
+1,General Medical Practice (Private)
+2,Anesthesiology & Intensive Care (Private)
+3,Cardiovascular Pathology (Private)
+4,Surgical Medicine (Private)
+5,Dermatology & Venereology (Private)
+6,Radiology (Private)
+7,Obstetrics & Gynecology (Private)
+8,Gastroenterology & Hepatology (Private)
+9,Internal Medicine (Private)
+11,Otorhinolaryngology (ENT) (Private)
+12,Pediatrics (Private)
+13,Pulmonology (Private)
+14,Rheumatology (Private)
+15,Ophthalmology (Private)
+17,Psychiatry (Private)
+18,Stomatology (Private)
+19,Dental Surgery
+31,Physical Medicine & Rehabilitation (Private)
+32,Neurology (Private)
+35,Nephrology (Private)
+36,Dental Surgery (Orthodontic Specialist)
+37,Anatomical & Cytopathology (Private)
+38,Director of Medical Laboratory (Private)
+42,Endocrinology & Metabolism (Private)
+90,Salaried Prescribers
+98,Non-Physician City Prescribers (Dentists/ Allied Health/ Labs/ Midwives)
+99,Unknown Specialty
