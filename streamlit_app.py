@@ -417,11 +417,11 @@ cost_dfs, ownership_dfs = load_data()
 combined_df = pd.concat(cost_dfs.values(), ignore_index=True)
 
 # Sidebar selector for hospital views
-hospital_options = ["Combined – All Hospitals"] + list(cost_dfs.keys())
+hospital_options = ["Combined – Northwestern"] + list(cost_dfs.keys())
 selected_hospital = st.sidebar.selectbox("Select Hospital", hospital_options)
 
 # Determine dataframe and ownership based on selection
-if selected_hospital == "Combined – All Hospitals":
+if selected_hospital == "Combined – Northwestern":
     render_tab(combined_df, selected_hospital, key_prefix="combined")
 else:
     df_selected = cost_dfs[selected_hospital]
