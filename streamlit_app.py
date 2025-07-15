@@ -231,6 +231,10 @@ def render_tab(df: pd.DataFrame, title: str, ownership_df: pd.DataFrame | None =
     # Key Metrics
     financial_metrics_section(filtered_df)
 
+    # Raw Data preview – moved up for better visibility
+    st.markdown("---")
+    st.dataframe(filtered_df, use_container_width=True, hide_index=True)
+
     # Charts
     st.markdown("---")
     selected_metrics = st.multiselect(
@@ -280,10 +284,6 @@ def render_tab(df: pd.DataFrame, title: str, ownership_df: pd.DataFrame | None =
     )
     if show_equipment:
         equipment_breakdown_chart(filtered_df)
-
-    # Raw Data preview
-    st.markdown("---")
-    st.dataframe(filtered_df, use_container_width=True, hide_index=True)
 
     # Ownership section (only if ownership data provided)
     if ownership_df is not None:
