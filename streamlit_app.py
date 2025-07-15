@@ -21,7 +21,7 @@ METRIC_COLUMNS = {
     "Operating Expense": "less_total_operating_expense",
     "Combined Charges": "combined_outpatient_inpatient_total_charges",
     "Net Patient Revenue": "net_patient_revenue",
-    "Net Income": "net_income",
+    "Operational Profit": "net_income",
     "Total Assets": "total_assets",
     "Total Liabilities": "total_liabilities",
     "Cash (On Hand & In Banks)": "cash_on_hand_and_in_banks",
